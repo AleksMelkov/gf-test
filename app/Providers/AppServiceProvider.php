@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Config\Delivery\DeliveredStatusConfig;
+use App\Config\Delivery\PlannedStatusConfig;
+use App\Config\Delivery\ShippedStatusConfig;
 use App\Enums\VersionEnum;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Route as RouteFacade;
@@ -74,5 +77,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->tag([
+            PlannedStatusConfig::class,
+            ShippedStatusConfig::class,
+            DeliveredStatusConfig::class,
+        ], 'delivery.statuses');
     }
 }

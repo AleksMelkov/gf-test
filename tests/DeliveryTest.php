@@ -2,9 +2,7 @@
 
 namespace App\Tests;
 
-use App\Events\DeliveryDelivered;
 use App\Models\Delivery;
-use DB;
 use Illuminate\Support\Facades\Event;
 
 class DeliveryTest extends TestCase
